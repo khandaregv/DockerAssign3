@@ -14,6 +14,7 @@ pipeline {
 							sh "sudo docker volume create V1"
 							sh "sudo docker run -itdp 80:80 -v /mnt/master:/usr/local/apache2/htdocs/ --name Cont1 httpd bash"
 							sh "sudo docker exec -u root Cont1 httpd -DFOREGROUND"
+							sh "sudo docker exec -itd Cont1 bash"
 						}		
 					}
 				}		
